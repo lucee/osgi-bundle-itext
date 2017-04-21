@@ -91,7 +91,7 @@
              <configuration>
                <artifactItems>
                  <artifactItem>
-                   <groupId>cglib</groupId>
+                   <groupId>com.lowagie</groupId>
                     <artifactId>itext</artifactId>
                     <version>2.1.7</version>
                    <type>jar</type>
@@ -113,14 +113,41 @@
         <configuration>
           <unpackBundle>true</unpackBundle>
           <instructions>
-            <Bundle-Name>com.lowagie.itext</Bundle-Name>
-            <Bundle-SymbolicName>com.lowagie.itext</Bundle-SymbolicName>
+            <Bundle-Name>org.lucee.itext</Bundle-Name>
+            <Bundle-SymbolicName>org.lucee.itext</Bundle-SymbolicName>
             <Bundle-Description>OSGI version of jar ${project.name}</Bundle-Description>
             <Export-Package>*</Export-Package>
-            <Require-Bundle>bouncycastle.mail;bundle-version=1.38.0,bouncycastle.prov;bundle-version=1.38.0,bouncycastle.tsp;bundle-version=1.38.0</Require-Bundle>
+            <Require-Bundle>bouncycastle.mail;bundle-version="[1.38.0,1.38.0]",bouncycastle.prov;bundle-version="[1.38.0,1.38.0]",bouncycastle.tsp;bundle-version="[1.38.0,1.38.0]"</Require-Bundle>
             <!-- <Require-Bundle-Fragment></Require-Bundle-Fragment> -->
-            <!-- <Import-Package>*</Import-Package> -->
-            <!-- <DynamicImport-Package>*</DynamicImport-Package> -->
+            <Import-Package>!com.apple.mrj,!com.lowagie.toolbox,com.lowagie.text,
+              com.lowagie.text.exceptions,com.lowagie.text.factories,com.lowagie.text.html,com.lowagie.text.pdf,
+              com.lowagie.text.pdf.codec,com.lowagie.text.pdf.codec.wmf,com.lowagie.text.pdf.collection,
+              com.lowagie.text.pdf.crypto,com.lowagie.text.pdf.draw,com.lowagie.text.pdf.events,
+              com.lowagie.text.pdf.fonts,com.lowagie.text.pdf.fonts.cmaps,com.lowagie.text.pdf.hyphenation,
+              com.lowagie.text.pdf.interfaces,com.lowagie.text.pdf.internal,com.lowagie.text.xml,
+              com.lowagie.text.xml.simpleparser,com.lowagie.text.xml.xmp,
+              javax.crypto,javax.imageio,javax.imageio.metadata,javax.imageio.plugins.jpeg,javax.imageio.stream,
+              javax.swing,javax.xml.parsers,javax.xml.transform,javax.xml.transform.stream,
+              
+              org.bouncycastle.asn1;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.asn1.cmp;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.asn1.cms;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.asn1.ocsp;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.asn1.pkcs;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.asn1.tsp;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.asn1.x509;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.cms;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.crypto;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.crypto.engines;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.crypto.modes;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.crypto.paddings;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.crypto.params;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.jce.provider;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.ocsp;bundle-version="[1.38.0,1.38.0]",
+              org.bouncycastle.tsp;bundle-version="[1.38.0,1.38.0]",
+
+              org.w3c.dom,org.xml.sax,org.xml.sax.helpers</Import-Package>
+            <DynamicImport-Package>com.apple.mrj,com.lowagie.toolbox</DynamicImport-Package>
             <!-- <Fragment-Host></Fragment-Host> -->
           </instructions>
         </configuration>
